@@ -1,0 +1,469 @@
+loading annotations into memory...
+Done (t=4.17s)
+creating index...
+index created!
+loading annotations into memory...
+Done (t=4.65s)
+creating index...
+index created!
+Registered coco instances
+[12/13 21:40:15 d2.engine.defaults]: Model:
+GeneralizedRCNN(
+  (backbone): FPN(
+    (fpn_lateral2): Conv2d(256, 256, kernel_size=(1, 1), stride=(1, 1))
+    (fpn_output2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (fpn_lateral3): Conv2d(512, 256, kernel_size=(1, 1), stride=(1, 1))
+    (fpn_output3): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (fpn_lateral4): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1))
+    (fpn_output4): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (fpn_lateral5): Conv2d(2048, 256, kernel_size=(1, 1), stride=(1, 1))
+    (fpn_output5): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (top_block): LastLevelMaxPool()
+    (bottom_up): ResNet(
+      (stem): BasicStem(
+        (conv1): Conv2d(
+          3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False
+          (norm): FrozenBatchNorm2d(num_features=64, eps=1e-05)
+        )
+      )
+      (res2): Sequential(
+        (0): BottleneckBlock(
+          (shortcut): Conv2d(
+            64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv1): Conv2d(
+            64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=64, eps=1e-05)
+          )
+          (conv2): Conv2d(
+            64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=64, eps=1e-05)
+          )
+          (conv3): Conv2d(
+            64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+        )
+        (1): BottleneckBlock(
+          (conv1): Conv2d(
+            256, 64, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=64, eps=1e-05)
+          )
+          (conv2): Conv2d(
+            64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=64, eps=1e-05)
+          )
+          (conv3): Conv2d(
+            64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+        )
+        (2): BottleneckBlock(
+          (conv1): Conv2d(
+            256, 64, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=64, eps=1e-05)
+          )
+          (conv2): Conv2d(
+            64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=64, eps=1e-05)
+          )
+          (conv3): Conv2d(
+            64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+        )
+      )
+      (res3): Sequential(
+        (0): BottleneckBlock(
+          (shortcut): Conv2d(
+            256, 512, kernel_size=(1, 1), stride=(2, 2), bias=False
+            (norm): FrozenBatchNorm2d(num_features=512, eps=1e-05)
+          )
+          (conv1): Conv2d(
+            256, 128, kernel_size=(1, 1), stride=(2, 2), bias=False
+            (norm): FrozenBatchNorm2d(num_features=128, eps=1e-05)
+          )
+          (conv2): Conv2d(
+            128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=128, eps=1e-05)
+          )
+          (conv3): Conv2d(
+            128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=512, eps=1e-05)
+          )
+        )
+        (1): BottleneckBlock(
+          (conv1): Conv2d(
+            512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=128, eps=1e-05)
+          )
+          (conv2): Conv2d(
+            128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=128, eps=1e-05)
+          )
+          (conv3): Conv2d(
+            128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=512, eps=1e-05)
+          )
+        )
+        (2): BottleneckBlock(
+          (conv1): Conv2d(
+            512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=128, eps=1e-05)
+          )
+          (conv2): Conv2d(
+            128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=128, eps=1e-05)
+          )
+          (conv3): Conv2d(
+            128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=512, eps=1e-05)
+          )
+        )
+        (3): BottleneckBlock(
+          (conv1): Conv2d(
+            512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=128, eps=1e-05)
+          )
+          (conv2): Conv2d(
+            128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=128, eps=1e-05)
+          )
+          (conv3): Conv2d(
+            128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=512, eps=1e-05)
+          )
+        )
+      )
+      (res4): Sequential(
+        (0): BottleneckBlock(
+          (shortcut): Conv2d(
+            512, 1024, kernel_size=(1, 1), stride=(2, 2), bias=False
+            (norm): FrozenBatchNorm2d(num_features=1024, eps=1e-05)
+          )
+          (conv1): Conv2d(
+            512, 256, kernel_size=(1, 1), stride=(2, 2), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv2): Conv2d(
+            256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv3): Conv2d(
+            256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=1024, eps=1e-05)
+          )
+        )
+        (1): BottleneckBlock(
+          (conv1): Conv2d(
+            1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv2): Conv2d(
+            256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv3): Conv2d(
+            256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=1024, eps=1e-05)
+          )
+        )
+        (2): BottleneckBlock(
+          (conv1): Conv2d(
+            1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv2): Conv2d(
+            256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv3): Conv2d(
+            256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=1024, eps=1e-05)
+          )
+        )
+        (3): BottleneckBlock(
+          (conv1): Conv2d(
+            1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv2): Conv2d(
+            256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv3): Conv2d(
+            256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=1024, eps=1e-05)
+          )
+        )
+        (4): BottleneckBlock(
+          (conv1): Conv2d(
+            1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv2): Conv2d(
+            256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv3): Conv2d(
+            256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=1024, eps=1e-05)
+          )
+        )
+        (5): BottleneckBlock(
+          (conv1): Conv2d(
+            1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv2): Conv2d(
+            256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv3): Conv2d(
+            256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=1024, eps=1e-05)
+          )
+        )
+      )
+      (res5): Sequential(
+        (0): BottleneckBlock(
+          (shortcut): Conv2d(
+            1024, 2048, kernel_size=(1, 1), stride=(2, 2), bias=False
+            (norm): FrozenBatchNorm2d(num_features=2048, eps=1e-05)
+          )
+          (conv1): Conv2d(
+            1024, 512, kernel_size=(1, 1), stride=(2, 2), bias=False
+            (norm): FrozenBatchNorm2d(num_features=512, eps=1e-05)
+          )
+          (conv2): Conv2d(
+            512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=512, eps=1e-05)
+          )
+          (conv3): Conv2d(
+            512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=2048, eps=1e-05)
+          )
+        )
+        (1): BottleneckBlock(
+          (conv1): Conv2d(
+            2048, 512, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=512, eps=1e-05)
+          )
+          (conv2): Conv2d(
+            512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=512, eps=1e-05)
+          )
+          (conv3): Conv2d(
+            512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=2048, eps=1e-05)
+          )
+        )
+        (2): BottleneckBlock(
+          (conv1): Conv2d(
+            2048, 512, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=512, eps=1e-05)
+          )
+          (conv2): Conv2d(
+            512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=512, eps=1e-05)
+          )
+          (conv3): Conv2d(
+            512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=2048, eps=1e-05)
+          )
+        )
+      )
+    )
+  )
+  (proposal_generator): RPN(
+    (rpn_head): StandardRPNHead(
+      (conv): Conv2d(
+        256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)
+        (activation): ReLU()
+      )
+      (objectness_logits): Conv2d(256, 3, kernel_size=(1, 1), stride=(1, 1))
+      (anchor_deltas): Conv2d(256, 12, kernel_size=(1, 1), stride=(1, 1))
+    )
+    (anchor_generator): DefaultAnchorGenerator(
+      (cell_anchors): BufferList()
+    )
+  )
+  (roi_heads): StandardROIHeads(
+    (box_pooler): ROIPooler(
+      (level_poolers): ModuleList(
+        (0): ROIAlign(output_size=(7, 7), spatial_scale=0.25, sampling_ratio=0, aligned=True)
+        (1): ROIAlign(output_size=(7, 7), spatial_scale=0.125, sampling_ratio=0, aligned=True)
+        (2): ROIAlign(output_size=(7, 7), spatial_scale=0.0625, sampling_ratio=0, aligned=True)
+        (3): ROIAlign(output_size=(7, 7), spatial_scale=0.03125, sampling_ratio=0, aligned=True)
+      )
+    )
+    (box_head): FastRCNNConvFCHead(
+      (flatten): Flatten(start_dim=1, end_dim=-1)
+      (fc1): Linear(in_features=12544, out_features=1024, bias=True)
+      (fc_relu1): ReLU()
+      (fc2): Linear(in_features=1024, out_features=1024, bias=True)
+      (fc_relu2): ReLU()
+    )
+    (box_predictor): FastRCNNOutputLayers(
+      (cls_score): Linear(in_features=1024, out_features=324, bias=True)
+      (bbox_pred): Linear(in_features=1024, out_features=1292, bias=True)
+    )
+    (mask_pooler): ROIPooler(
+      (level_poolers): ModuleList(
+        (0): ROIAlign(output_size=(14, 14), spatial_scale=0.25, sampling_ratio=0, aligned=True)
+        (1): ROIAlign(output_size=(14, 14), spatial_scale=0.125, sampling_ratio=0, aligned=True)
+        (2): ROIAlign(output_size=(14, 14), spatial_scale=0.0625, sampling_ratio=0, aligned=True)
+        (3): ROIAlign(output_size=(14, 14), spatial_scale=0.03125, sampling_ratio=0, aligned=True)
+      )
+    )
+    (mask_head): MaskRCNNConvUpsampleHead(
+      (mask_fcn1): Conv2d(
+        256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)
+        (activation): ReLU()
+      )
+      (mask_fcn2): Conv2d(
+        256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)
+        (activation): ReLU()
+      )
+      (mask_fcn3): Conv2d(
+        256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)
+        (activation): ReLU()
+      )
+      (mask_fcn4): Conv2d(
+        256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)
+        (activation): ReLU()
+      )
+      (deconv): ConvTranspose2d(256, 256, kernel_size=(2, 2), stride=(2, 2))
+      (deconv_relu): ReLU()
+      (predictor): Conv2d(256, 323, kernel_size=(1, 1), stride=(1, 1))
+    )
+  )
+)
+[12/13 21:40:15 d2.data.dataset_mapper]: [DatasetMapper] Augmentations used in training: [ResizeShortestEdge(short_edge_length=(640, 672, 704, 736, 768, 800), max_size=1333, sample_style='choice'), RandomFlip(prob=0.3), RandomLighting(scale=0.7), RandomContrast(intensity_min=0.6, intensity_max=1.3), RandomSaturation(intensity_min=0.8, intensity_max=1.4)]
+[12/13 21:40:19 d2.data.datasets.coco]: Loading /home/ali_zolfagharian/raw_data/annotations.json takes 4.39 seconds.
+WARNING [12/13 21:40:19 d2.data.datasets.coco]: 
+Category ids in annotations are not in [1, #categories]! We'll apply a mapping for you.
+
+[12/13 21:40:20 d2.data.datasets.coco]: Loaded 54392 images in COCO format from /home/ali_zolfagharian/raw_data/annotations.json
+[12/13 21:40:21 d2.data.build]: Removed 0 images with no usable annotations. 54392 images left.
+[12/13 21:40:23 d2.data.build]: Distribution of instances among all 323 categories:
+|   category    | #instances   |   category    | #instances   |   category    | #instances   |
+|:-------------:|:-------------|:-------------:|:-------------|:-------------:|:-------------|
+| beetroot-st.. | 283          | green_bean_.. | 98           | watermelon_.. | 130          |
+| tuna_in_oil.. | 59           | sweet_potato  | 286          | country_fries | 99           |
+| potato_gnoc.. | 122          | chips_frenc.. | 482          |   rosti_n_s   | 126          |
+| vegetable_m.. | 95           | coleslaw_ch.. | 58           |  ratatouille  | 199          |
+| mixed_salad.. | 666          | leaf_spinach  | 355          | witloof_chi.. | 183          |
+|   artichoke   | 77           | aubergine_e.. | 303          |    avocado    | 663          |
+| french_beans  | 334          | cucumber_pi.. | 347          |   cucumber    | 1123         |
+|    capers     | 87           |    pumpkin    | 129          |    tomato     | 2737         |
+|  red_radish   | 355          | beetroot_raw  | 91           | chinese_cab.. | 107          |
+|  sauerkraut   | 73           | white_cabbage | 103          |     peas      | 145          |
+|     corn      | 243          | spring_onio.. | 107          |    garlic     | 64           |
+|  swiss_chard  | 91           | white_aspar.. | 92           |  shoots_n_s   | 71           |
+| alfa_sprouts  | 59           | beans_kidney  | 125          |   pineapple   | 115          |
+|     apple     | 1354         |  pomegranate  | 145          |   apricots    | 210          |
+|    banana     | 958          |  berries_n_s  | 129          |     dates     | 109          |
+| strawberries  | 589          |     figs      | 81           | grapefruit_.. | 63           |
+|  blueberries  | 413          |  raspberries  | 309          |     kaki      | 66           |
+|   cherries    | 80           |     kiwi      | 289          |   mandarine   | 298          |
+|     mango     | 156          | sugar_melon.. | 235          |   nectarine   | 190          |
+|    orange     | 334          |     plums     | 152          |    grapes     | 299          |
+| raisins_dried | 105          |     lemon     | 164          |  damson_plum  | 55           |
+| peanut_butter | 177          | chestnuts_ch  | 59           |   seeds_n_s   | 66           |
+| pumpkin_seeds | 101          |   pine_nuts   | 62           | sunflower_s.. | 93           |
+| mixed_seeds.. | 87           |    almonds    | 426          |    walnut     | 220          |
+|  cashew_nut   | 213          |   hazelnut    | 104          |    coconut    | 70           |
+|   pistachio   | 131          | sesame_seeds  | 102          | green_olives  | 252          |
+| black_olives  | 343          |  kefir_drink  | 79           | cottage_che.. | 206          |
+| emmental_ch.. | 66           | fresh_chees.. | 177          |  gruyere_ch   | 346          |
+|   halloumi    | 61           |  mozzarella   | 313          |   parmesan    | 553          |
+| cheese_for_.. | 203          | cream_chees.. | 127          |   tomme_ch    | 89           |
+|   tiramisu    | 87           | rice_noodle.. | 103          |    bulgur     | 64           |
+|   couscous    | 144          | grits_polen.. | 127          |    quinoa     | 259          |
+|   rice_wild   | 72           |   spaetzle    | 163          |   pasta_n_s   | 356          |
+| pasta_hornl.. | 112          | pasta_in_bu.. | 75           | pasta_lingu.. | 161          |
+| pasta_whole.. | 172          |  bread_fruit  | 101          |  bread_pita   | 119          |
+| bread_ticin.. | 62           |  bread_toast  | 207          |    brioche    | 99           |
+| roll_of_hal.. | 160          | roll_with_p.. | 99           | white_bread.. | 75           |
+|   focaccia    | 81           | lye_pretzel.. | 118          | braided_whi.. | 490          |
+| breadcrumbs.. | 82           | rusk_wholem.. | 59           | chicken_bre.. | 197          |
+|  chicken_leg  | 107          |  cervelat_ch  | 91           |  meatloaf_ch  | 67           |
+| dried_meat_.. | 267          |   salami_ch   | 382          | meat_terrin.. | 71           |
+|     tofu      | 345          |   fish_n_s    | 190          |    salmon     | 363          |
+|     tuna      | 157          |      egg      | 1482         |  praline_n_s  | 163          |
+|      jam      | 1124         | dark_chocol.. | 502          | hazelnut_ch.. | 180          |
+| chocolate_e.. | 70           |    brownie    | 115          |  cake_lemon   | 61           |
+| crepe_with_.. | 222          |  fruit_tart   | 80           | cake_chocol.. | 262          |
+|    muffin     | 78           | omelette_wi.. | 118          |   tart_n_s    | 149          |
+| croissant_w.. | 117          |    cookies    | 133          | chocolate_c.. | 77           |
+|   smoothie    | 85           | ice_tea_on_.. | 87           | aperitif_wi.. | 55           |
+|   wine_red    | 1081         | sauce_savou.. | 174          |    ketchup    | 208          |
+| bolognaise_.. | 186          | tomato_sauce  | 633          | oil_vinegar.. | 75           |
+|   guacamole   | 207          | tartar_sauce  | 71           |   tzatziki    | 63           |
+|     basil     | 67           |    parsley    | 79           |  sauce_soya   | 88           |
+| falafel_balls | 116          | savoury_pas.. | 69           |  corn_crisps  | 115          |
+|   croutons    | 62           |   crisps_ch   | 157          | spring_roll.. | 70           |
+| ham_croissa.. | 73           | salt_cake_c.. | 116          | lasagne_mea.. | 120          |
+| mashed_pota.. | 193          |     sushi     | 147          |    hummus     | 409          |
+|  greek_salad  | 92           | chocolate_m.. | 88           |  cheesecake   | 62           |
+| caprese_sal.. | 176          | chili_con_c.. | 70           | taboule_pre.. | 119          |
+| salmon_smoked | 329          | glucose_dri.. | 401          | chicken_cur.. | 146          |
+| potatoes_au.. | 92           | birchermues.. | 209          | fajita_brea.. | 140          |
+| butter_spre.. | 78           | water_with_.. | 211          | sun_dried_t.. | 107          |
+| fruit_coulis  | 73           | soup_of_len.. | 121          | lasagne_veg.. | 58           |
+| french_pizz.. | 62           | vegetable_a.. | 66           | porridge_pr.. | 98           |
+| curry_veget.. | 206          |  banana_cake  | 60           |  cappuccino   | 335          |
+|  pearl_onion  | 60           |     nuts      | 430          |   bouillon    | 134          |
+|    ham_raw    | 319          |     water     | 6970         |    risotto    | 288          |
+|   asparagus   | 220          | potato_salad  | 61           | mixed_veget.. | 1284         |
+|  sweet_corn   | 193          |    potato     | 889          | baked_potato  | 258          |
+|  fruit_mixed  | 176          | latte_macch.. | 75           | egg_scrambled | 216          |
+|   croissant   | 305          |   wine_rose   | 138          |  wine_white   | 610          |
+|      tea      | 2138         | pizza_with_.. | 186          | pizza_with_.. | 65           |
+| pizza_margh.. | 433          | pizza_with_.. | 85           |   hamburger   | 293          |
+| veggie_burger | 101          |    coffee     | 2620         | white_coffee  | 764          |
+| ristretto_w.. | 201          |   espresso    | 849          |   broccoli    | 572          |
+|    pancake    | 130          |    peanut     | 127          |    carrot     | 2231         |
+|  cordon_bleu  | 58           |     feta      | 308          |   zucchini    | 618          |
+|    butter     | 2256         | rice_whole_.. | 113          |     rice      | 1568         |
+|    spinach    | 70           |  spinach_raw  | 80           |    biscuit    | 295          |
+| salad_leaf_.. | 2842         | salad_rocket  | 318          | salad_lambs.. | 258          |
+| balsamic_sa.. | 271          | salad_dress.. | 245          | french_sala.. | 294          |
+|    quiche     | 146          |     juice     | 73           |  juice_apple  | 96           |
+| juice_orange  | 334          |  pie_apricot  | 62           | pie_plum_ba.. | 58           |
+|   apple_pie   | 163          |   mushroom    | 505          | mixed_milk_.. | 365          |
+| chocolate_m.. | 146          | chocolate_n_s | 193          |     bread     | 1337         |
+|   bread_rye   | 92           | bread_whole.. | 2085         |  crisp_bread  | 71           |
+|  bread_grain  | 298          | gluten_free.. | 106          | bread_whole.. | 808          |
+|  bread_white  | 2634         |  bread_black  | 120          | bread_whole.. | 164          |
+|  pasta_penne  | 304          | pasta_spagh.. | 524          |  pasta_twist  | 220          |
+| pasta_noodles | 152          | pasta_in_co.. | 72           |     sauce     | 168          |
+| sauce_cockt.. | 61           |  sauce_pesto  | 176          | sauce_mushr.. | 90           |
+|  sauce_curry  | 72           |  sauce_cream  | 267          | shrimp_prawn  | 244          |
+|  lentil_n_s   | 168          | lentils_gre.. | 68           |  mayonnaise   | 435          |
+|     onion     | 467          | cola_based_.. | 114          |     bacon     | 434          |
+|   beef_n_s    | 584          | bell_pepper.. | 833          | bell_pepper.. | 86           |
+|     honey     | 562          |     beer      | 390          | brussel_spr.. | 69           |
+|  cheese_n_s   | 936          | blue_mould_.. | 105          | semi_hard_c.. | 239          |
+|  hard_cheese  | 747          |  soft_cheese  | 356          | goat_cheese.. | 150          |
+|    chicken    | 471          | chicken_cut.. | 134          |    nuggets    | 67           |
+|   chickpeas   | 310          |     soup      | 345          | soup_pumpkin  | 168          |
+|  cauliflower  | 284          |   celeriac    | 114          | crunch_muesli | 157          |
+|  muesli_dry   | 201          | curds_natural | 147          | soft_drink_.. | 146          |
+|    fennel     | 244          |    flakes     | 221          |    fondue     | 67           |
+|    ham_n_s    | 403          |   kolhrabi    | 180          |     leek      | 176          |
+|   meat_n_s    | 60           |    mustard    | 189          |     peach     | 135          |
+|     pear      | 340          |   pork_n_s    | 260          |    sausage    | 483          |
+|    yogurt     | 524          |  applesauce   | 115          | red_cabbage.. | 175          |
+| cream_doubl.. | 413          | ice_cream_n_s | 350          |               |              |
+|     total     | 100256       |               |              |               |              |
+[12/13 21:40:23 d2.data.build]: Using training sampler TrainingSampler
+[12/13 21:40:23 d2.data.common]: Serializing 54392 elements to byte tensors and concatenating them all ...
+[12/13 21:40:24 d2.data.common]: Serialized dataset takes 138.49 MiB
+WARNING [12/13 21:40:24 d2.solver.build]: SOLVER.STEPS contains values larger than SOLVER.MAX_ITER. These values will be ignored.
+[12/13 21:40:24 d2.engine.train_loop]: Starting training from iteration 0
+[12/13 21:41:10 d2.utils.events]:  eta: 0:00:00  iter: 19  total_loss: 6.833  loss_cls: 5.341  loss_box_reg: 0.6826  loss_mask: 0.6914  loss_rpn_cls: 0.03852  loss_rpn_loc: 0.01818  time: 2.1902  data_time: 0.3020  lr: 0.00023751  max_mem: 7719M
+[12/13 21:41:10 d2.engine.hooks]: Overall training speed: 18 iterations in 0:00:39 (2.1902 s / it)
+[12/13 21:41:10 d2.engine.hooks]: Total training time: 0:00:40 (0:00:01 on hooks)
